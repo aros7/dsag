@@ -4,5 +4,6 @@
 
 function Node(element){
     this.element = element;
+    this.previous = null;
     this.next = null;
 }
