@@ -4,6 +4,7 @@
 
 function LList(){
     this.head = new Node("head");
+    this.head.next = this.head;
     this.find = find;
     this.insert = insert;
     this.remove = remove;
@@ -13,7 +14,7 @@ function LList(){
 
 function find(item){
     var currNode = this.head;
-    while(currNode.element != item){
+    while(currNode.element != item && currNode.next != 'head'){
         currNode = currNode.next;
     }
     return currNode;
@@ -28,7 +29,7 @@ function insert(newElement, item){
 
 function findPrevious(item){
     var currNode = this.head;
-    while(currNode.next != null && currNode.next.element != item){
+    while(currNode.next.element != 'head' && currNode.next.element != item){
         currNode = currNode.next;
     }
     return currNode;
@@ -44,7 +45,7 @@ function remove(item){
 
 function display(){
     var currNode = this.head;
-    while(currNode.next != null){
+    while(currNode.next != null && currNode.next.element != 'head'){
         console.log(currNode.next.element);
         currNode = currNode.next;
     }
