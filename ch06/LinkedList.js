@@ -8,7 +8,6 @@ function LList(){
     this.insert = insert;
     this.remove = remove;
     this.display = display;
-    this.findPrevious = findPrevious;
     this.dispReverse = dispReverse;
 }
 
@@ -26,14 +25,6 @@ function insert(newElement, item){
     newNode.previous = currNode;
     newNode.next = currNode.next;
     currNode.next = newNode;
-}
-
-function findPrevious(item){
-    var currNode = this.head;
-    while(currNode.next != null && currNode.next.element != item){
-        currNode = currNode.next;
-    }
-    return currNode;
 }
 
 function remove(item){
